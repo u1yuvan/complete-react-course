@@ -1,5 +1,9 @@
 let productCount = 0;
 let imgurl = require("../images/fresh-milk.webp");
+let IsAvailable = 'Available';
+
+let badgeClass = 'badge-margin-left-240  badge ';
+badgeClass += IsAvailable === 'Available' ? 'bg-success' : 'bg-danger';
 // let style = {
 //     padding: '0px 20px', 
 //     "font-size": 14,
@@ -22,6 +26,7 @@ function Products() {
                           <button className="btn btn-primary">-</button>
                         <span style={{'padding': '0px 20px',"font-size": 14,}}>{displayFormattedProductCount()}</span>
                         <button className="btn btn-primary">+</button>
+                        <span className={badgeClass}>{IsAvailable}</span>
                     </div>
                 </div>
                 <img src={imgurl} alt="Generic placeholder image" width="100" className="ml-lg order-1 order-lg-2" />
