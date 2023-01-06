@@ -1,0 +1,11 @@
+body {
+    background-color: aqua;
+    background: -webkit-linear-gradient(to right, #00b09b,#96c9);
+    background: linear-gradient( to right, #00b09b,#96c9);
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.text-gray {
+    color: #aaa;
+}
