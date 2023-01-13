@@ -1,7 +1,4 @@
 import ProductDetails from "./ProductDetails";
-
-
-
 let isAvailable = 'Available';
 
 // let style = {
@@ -19,7 +16,9 @@ function Products(props) {
                 <div className="media-body order-2 order-lg-1">
                     <h5 className="mt-0 font-weight-bold mb-2">{props.Name}</h5>
                     <p className="font-italic text-muted mb-0 small">{props.Description}</p>
-                    <ProductDetails price={props.price} isAvailable={props.isAvailable} />
+                    <ProductDetails price={props.price} isAvailable={props.isAvailable}> 
+                    <p>hello</p>
+                    </ProductDetails>
                 </div>
                 <img src={(props.Imageurl)} alt="Generic placeholder image" width="100" className="ml-lg order-1 order-lg-2" />
             </div>
