@@ -1,10 +1,7 @@
 import React from 'react';
 
-function btnClickEventhandler(){
-    console.log("Button Clicked!");
-}
 function Button(props){
-    return  <button onClick={btnClickEventhandler} className="btn btn-primary">{props.children}</button>
+    return  <button  onClick= {props.eventHandler} className="btn btn-primary">{props.children}</button>
 
 }
 
