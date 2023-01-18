@@ -23,17 +23,17 @@ function ProductDetails(props) {
         console.log(productCount);
     }
 
-    return (
-        <div className="d-flex align-items-center justify-content-start mt-1" >
-            <h6 className="font-weight-bold my-2" style={{ 'marginRight': 30 }}>{props.price}₹</h6>
-            <Button eventHandler={decrementProductCount} >-</Button>
-            <span style={{ 'padding': '0px 20px', "fontSize": 14, }}>
-                {displayFormattedProductCount()}
-            </span>
-            <Button eventHandler={incrementProductCount}>+</Button>
-            <span className={badgeClass}>{props.isAvailable ? 'Avilable' : 'Unavailable'}</span>
-        </div>
-    )
+    // return (
+    //     <div className="d-flex align-items-center justify-content-start mt-1" >
+    //         <h6 className="font-weight-bold my-2" style={{ 'marginRight': 30 }}>{props.price}₹</h6>
+    //         <Button eventHandler={decrementProductCount} >-</Button>
+    //         <span style={{ 'padding': '0px 20px', "fontSize": 14, }}>
+    //             {displayFormattedProductCount()}
+    //         </span>
+    //         <Button eventHandler={incrementProductCount}>+</Button>
+    //         <span className={badgeClass}>{props.isAvailable ? 'Avilable' : 'Unavailable'}</span>
+    //     </div>
+    // )
     // return React.createElement('div', {className: 'd-flex align-items-center justify-content-start mt-1'}, 
     //           React.createElement('h6',{className:"font-weight-bold my-2", style: {marginRight: 30 }}, "₹" + props.price ),
     //           React.createElement(Button, {}, "-"),
