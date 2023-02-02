@@ -46,7 +46,7 @@ function ProductForm() {
     }
 
     function availableInputHandler(event) {
-        updateAvailability(event.target.value);
+        updateAvailability(event.target.checked);
         // updateUserInput({
         //     ...userInput,
         //     pAvailable: event.target.value
@@ -60,11 +60,23 @@ function ProductForm() {
         //     pImageUrl: event.target.value
         // })
     }
+    function createProductEventHandler(event){
+      event.preventDefault();
+      let product = {
+         pId: 1,
+        pName: pName,
+        desc: pDescription,
+        isAvailable: Boolean(pAvailable),
+        image: pImageUrl,
+        price: Number(pPrice)
+    }
+    console.log(product);
+    }
 
     return (
-        <form className="row g-3">
+        <form className="row g-3" onSubmit={createProductEventHandler}>
             <div className="col-md-6">
-                <label for="name">Product Name</label>
+                <label htmlFor="name">Product Name</label>
                 <input type="text"
                     className="form-control"
                     id="name"
@@ -72,7 +84,7 @@ function ProductForm() {
                     onChange={nameInputHandler} />
             </div>
             <div className="col-md-6">
-                <label for="price">Product Price</label>
+                <label htmlFor="price">Product Price</label>
                 <input type="number"
                     min="0.01" step="0.01"
                     className="form-control"
@@ -82,7 +94,7 @@ function ProductForm() {
             </div>
 
             <div className="form-group">
-                <label for="description">Product Description</label>
+                <label htmlFor="description">Product Description</label>
                 <input type="text"
                     className="form-control"
                     id="description"
@@ -90,15 +102,15 @@ function ProductForm() {
                     onChange={descriptionInputHandler} />
             </div>
 
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="isAvailable" 
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" role="switch" id="isAvailable" 
                 onChange={availableInputHandler}/>
-                <label class="form-check-label" for="isAvailable">Is product available in stock?</label>
+                <label className="form-check-label" htmlFor="isAvailable">Is product available in stock?</label>
                 
             </div>
 
             <div className="form-group">
-                <label for="select-image">Select product image</label>
+                <label htmlFor="select-image">Select product image</label>
                 <input type="file" className="form-control" id="select-image" 
                 onChange={imageInputHandler}/>
             </div>
