@@ -1,10 +1,11 @@
 import React,{ useState } from "react";
 
+
 function ProductForm() {
     let[pName, updateName]= useState('')
     let[pPrice, updatePrice]= useState('')
     let[pDescription, updateDescription]= useState('')
-    let[pAvailable, updateAvailability]= useState('')
+    let[pAvailable, updateAvailability]= useState(false)
     let[pImageUrl, updateImageUrl]= useState('')
 
 //     let[userInput, updateUserInput] = useState({
@@ -17,7 +18,6 @@ function ProductForm() {
 
     function nameInputHandler(event) {
         updateName(event.target.value);
-
         // updateUserInput({
         //     ...userInput,
         //     pName: event.target.value
@@ -70,6 +70,15 @@ function ProductForm() {
         image: pImageUrl,
         price: Number(pPrice)
     }
+
+    updateName('')
+    updatePrice('')
+    updateDescription('')
+    updateAvailability(false)
+    updateImageUrl('')
+    
+
+
     console.log(product);
     }
 
@@ -81,6 +90,7 @@ function ProductForm() {
                     className="form-control"
                     id="name"
                     placeholder="Product Name"
+                    value={pName}
                     onChange={nameInputHandler} />
             </div>
             <div className="col-md-6">
@@ -90,6 +100,7 @@ function ProductForm() {
                     className="form-control"
                     id="price"
                     placeholder="Product Price"
+                    value={pPrice}
                     onChange={priceInputHandler} />
             </div>
 
@@ -99,11 +110,13 @@ function ProductForm() {
                     className="form-control"
                     id="description"
                     placeholder="Product Description"
+                    value={pDescription}
                     onChange={descriptionInputHandler} />
             </div>
 
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" role="switch" id="isAvailable" 
+                <input className="form-check-input" type="checkbox" role="switch" id="isAvailable"
+                checked={pAvailable} 
                 onChange={availableInputHandler}/>
                 <label className="form-check-label" htmlFor="isAvailable">Is product available in stock?</label>
                 
@@ -112,6 +125,7 @@ function ProductForm() {
             <div className="form-group">
                 <label htmlFor="select-image">Select product image</label>
                 <input type="file" className="form-control" id="select-image" 
+                value={pImageUrl}
                 onChange={imageInputHandler}/>
             </div>
 
