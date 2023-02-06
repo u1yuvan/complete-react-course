@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 
 
-function ProductForm() {
+function ProductForm(props) {
     let[pName, updateName]= useState('')
     let[pPrice, updatePrice]= useState('')
     let[pDescription, updateDescription]= useState('')
@@ -77,9 +77,9 @@ function ProductForm() {
     updateAvailability(false)
     updateImageUrl('')
     
-
-
-    console.log(product);
+    // console.log(product);
+    props.createProduct(product)
+    
     }
 
     return (
